@@ -45,6 +45,10 @@ echo ""
 echo "convert crt + RSA private key into a PKCS12 (PFX) file ..."
 openssl pkcs12 -export -passin pass:foobar -passout pass:foobar -in server.crt -inkey server.key -out server.pfx
 
+security create-keychain -p mysecretpassword signing.keychain
+security default-keychain -s signing.keychain
+security unlock-keychain -p mysecretpassword signing.keychain
+
 echo ""
 echo "importing the certificate ..."
-security import server.pfx -P foobar
+security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
