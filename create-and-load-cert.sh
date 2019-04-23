@@ -52,3 +52,6 @@ security unlock-keychain -p mysecretpassword signing.keychain
 echo ""
 echo "importing the certificate ..."
 security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
+
+
+security dump-keychain
