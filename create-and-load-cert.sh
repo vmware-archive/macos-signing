@@ -49,12 +49,12 @@ security create-keychain -p mysecretpassword signing.keychain
 security default-keychain -s signing.keychain
 security unlock-keychain -p mysecretpassword signing.keychain
 # security set-keychain-settings -t 3600 -u signing.keychain
-security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k mysecretpassword signing.keychain
 
 echo ""
 echo "importing the certificate ..."
 security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
 
+security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k mysecretpassword signing.keychain
 
 # security dump-keychain
 curl -Lq "$KUBECTL_URL" > kubectl
