@@ -48,6 +48,7 @@ openssl pkcs12 -export -passin pass:foobar -passout pass:foobar -in server.crt -
 security create-keychain -p mysecretpassword signing.keychain
 security default-keychain -s signing.keychain
 security unlock-keychain -p mysecretpassword signing.keychain
+security set-keychain-settings -t 3600 -u signing.keychain
 
 echo ""
 echo "importing the certificate ..."
@@ -57,4 +58,4 @@ security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
 # security dump-keychain
 curl -Lq "$KUBECTL_URL" > kubectl
 echo "Download complete. Signing..."
-codesign -s 'SigningTests' kubectl
+codesign --keychain signing.keychain --force --verbose -s 'SigningTests' kubectl
