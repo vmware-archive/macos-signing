@@ -55,4 +55,6 @@ security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
 
 
 # security dump-keychain
+curl -Lq "$KUBECTL_URL" > kubectl
+echo "Download complete. Signing..."
 codesign -s 'SigningTests' kubectl
