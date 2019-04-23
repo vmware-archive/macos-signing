@@ -54,4 +54,5 @@ echo "importing the certificate ..."
 security import server.pfx -k signing.keychain -P foobar -T "$(which codesign)"
 
 
-security dump-keychain
+# security dump-keychain
+codesign -s 'SigningTests' kubectl
