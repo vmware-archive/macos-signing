@@ -1,3 +1,4 @@
 os: osx
 
-script: which codesign
+script:
+- ./create-and-load-cert.sh
