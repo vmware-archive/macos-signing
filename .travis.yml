@@ -1,9 +1,13 @@
 os: osx
 
+services:
+- docker
+
 script:
 - ./create-and-load-cert.sh
 - ./download-and-sign.sh
 - ./verify.sh
+- docker info
 
 env:
   global:
