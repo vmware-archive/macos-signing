@@ -10,14 +10,13 @@ import (
 func main() {
 	cp := &integration.ControlPlane{}
 	cp.Start()
+	defer cp.Stop()
 	kubeCtl := cp.KubeCtl()
-	stdout, stderr, err := kubeCtl.Run("version")
+	args := os.Args[1:]
+	stdout, stderr, err := kubeCtl.Run(args...)
 	if err != nil {
 		panic(err)
 	}
-
 	io.Copy(os.Stdout, stdout)
 	io.Copy(os.Stderr, stderr)
-
-	cp.Stop()
 }
