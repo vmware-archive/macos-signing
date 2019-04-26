@@ -13,3 +13,5 @@ readonly CERT_VALID_DAYS=10
 readonly KEYCHAIN_PASS='randomPass'
 readonly KEYCHAIN_NAME='signing.keychain'
 readonly SIGNING_CN='SigningTests'
+
+readonly KUBECTL_FILE_NAME='./kubectl'
