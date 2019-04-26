@@ -8,6 +8,7 @@ set -o pipefail
 
 echo "downloading kubectl ..."
 curl -Lq "$KUBECTL_URL" > "${KUBECTL_FILE_NAME}"
+chmod 755 "${KUBECTL_FILE_NAME}"
 
 echo ""
 echo 'signing kubectl ...'
