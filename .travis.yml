@@ -2,7 +2,7 @@ os: osx
 
 script:
 - ./create-and-load-cert.sh
-# - ./download-and-sign.sh
+- ./download-and-sign.sh
 #- ./verify.sh
 
 env:
