@@ -1,14 +1,11 @@
 os: osx
-
 language: go
-
 script:
-- ./create-and-load-cert.sh
-- ./download-and-sign.sh
-- ./verify.sh
-- ./verify-against-controlplane.sh
-
+- "./create-and-load-cert.sh"
+- "./download-and-sign.sh"
+- "./verify.sh"
+- "./verify-against-controlplane.sh"
 env:
   global:
-    # travis encrypt --add KUBECTL_URL=https://....
-    secure: gDMx/+PiA1Sk5FAla65cI/nq5y3yLNIGNNMVBCH9lgV5oBo5i0tKFqPQUCuHVbpOeJ0jOxOt67XcoPAcr0mia/xC0+OwHMZmUnC3g4JWPTgQKQP13DGM/jkGqv0lJnZORRON9hKXvshrcTLMB8QjVbU2RoigciwZKPdaT2XEOnhZTKuZlZoeS+iOJQ6Ihuj3oDtVLqlJ4FYlFRPIJZy7C2R+LT6feLe8n/idBpDTNlePENT5M1G0yG30gRZFGkFC4Nil9Ym9MGrVadHnBSTtUNHHXyu5O4eB0t+OrclHyhrRDgtc2VpTGIgyLI1Z7c17MgTir1cWXgnX0qMRlH/ml7KyWZgq2MMw2wlbiVHzLA1/ca1lFrUMwuUiGqAZxH/rIv7ozX8sH0SEGGlUlrVPa42r+qCpujY3gMRAgr51zo9XjEZAnThXY7uLcHKujCM5HhXpPKlRXlHClVJ9o5sBMcz3xzjn6ecLnl3xswWVXgbNr2MlzHxltYYArykwSFiqELgR8pRxnch4o2amDbi+3syA/vP/3zNmUDAd296aEV8O/1ai/fYUJEbWWVeMxCrYifriKSV9yCe2adW5niiM6o3QaL9SxfCqBl8OMTXkxOckW6oA/UsXUJlUdcyuQOoWbYbRX80R6sWAG+nLGXfzKE3nSDqHavZM4GopckeVjdE=
+  # travis encrypt --add KUBECTL_URL=https://....
+  - secure: KRfJd++wPNTkk1shfBaqQtI6FvRECExNtIydKq/bE9lgxSZmfRBji2IrObi7cbNPTTKtrwYNtuKt79Z5JoZ4HhRzmz5Wxo0Vs1yAcBFIX/1/AuKAlwEdKXRPA//+8WKcuCWBOHFI4fxejDwZGGGR1KfhkHktZfZsFf1yDf7+PKTCXRHhMIVQHzljVB+Zi9tz1LyNFGrDUoWT6OiSXp7enQTpx8AMFIzrU+rPr4fBBxmmfvFTdCYvt0PRsYmkYWLzjx1TIkb6t+H0QthmSn7jB4t3sGPP5CzFrtziUnIekxUbgxaAm347fiXbV6gz5e5XqTHDsp6Reqr44mzuLFek3NGDnxNtNo2r5fokPuIYfe31KJOLpPD8LvQn8fQO0fBDIqBi6+EfE90EcyOCrbHWuDgbdSFa+JcJ5ILn2cVheXZYOIZwLuNL5zK3dsQ0Tfrbf0HtgZdauPaIaTEICd0S8LyziVr4ub+TNU40daviT8+ony6FeFh7a1UogZuA+O4NCoejKLtGra3kE/FFAetJ/rZpsEuKHUdryDWHDWhMVZvFxNpyv80kjCHO2lVdxPGciZ3GeKnt7nKqDkNQcBZX2BmWbKECGp7Ss62+vlxKZmpJeWdZrnwiZ7c51Mr3NBxqS9Sgpyk/tp81twxtvH+iyLomgFtup3qxaS4961Vak9I=
